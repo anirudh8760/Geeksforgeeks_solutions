@@ -1,0 +1,15 @@
+class Solution {
+    double power(double b, int e) {
+        if(e==0) return 1;
+        if(b==0) return 0;
+        if(e<0){
+            return 1/power(b,-e);
+        }
+        double halfpower=power(b,e/2);
+        if(e%2==0){
+            return halfpower*halfpower;
+        }else{
+            return b*halfpower*halfpower;
+        }
+    }
+}
